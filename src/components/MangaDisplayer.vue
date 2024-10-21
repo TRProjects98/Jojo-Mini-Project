@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { onMounted } from 'vue';
+import { ref, onMounted } from 'vue';
+import client from '../services/contentfulClient';
 
 interface Manga {
   name: string;
@@ -7,15 +8,28 @@ interface Manga {
   image_src: string;
 }
 
-const All_Mangas: Array<Manga> = [
-  {
-    name: 'Jonathan Joestar',
-    dates: '2014',
-    image_src: '/Jonathan_Joestar.png',
-  },
-];
+const All_Mangas = ref<Manga[]>([]);
 
-onMounted(() => {
+const fetchMangaData = async () => {
+  try {
+    const response = await client.getEntries({
+      content_type: 'allMangas',
+    });
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    All_Mangas.value = response.items.map((item: any) => ({
+      name: item.fields.name,
+      dates: item.fields.dates,
+      image_src: item.fields.imageSrc,
+    }));
+  } catch (error) {
+    console.error('Error fetching manga data:', error);
+  }
+};
+
+onMounted(async () => {
+  await fetchMangaData();
+
   // eslint-disable-next-line no-undef
   const allMangaDivs: NodeListOf<Element> =
     document.querySelectorAll('#project_div');

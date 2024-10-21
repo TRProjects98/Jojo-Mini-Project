@@ -17,7 +17,7 @@ export default [
     languageOptions: { parserOptions: { parser: tseslint.parser } },
   },
   {
-    ignores: ['node_modules/*', 'dist/*', 'github/*'],
+    ignores: ['node_modules/*', 'dist/*', 'github/*', 'services/*'],
   },
   {
     rules: {

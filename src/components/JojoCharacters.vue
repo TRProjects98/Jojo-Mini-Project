@@ -1,15 +1,33 @@
 <script setup lang="ts">
+import { ref, onMounted } from 'vue';
+import client from '../services/contentfulClient';
+
 interface Jojo {
   name: string;
   image: string;
 }
 
-const JojoCharacters: Array<Jojo> = [
-  {
-    name: 'Jonathan Joestar',
-    image: '/Jonathan_Joestar.png',
-  },
-];
+const JojoCharacters = ref<Jojo[]>([]);
+
+const fetchJojoCharacters = async () => {
+  try {
+    const response = await client.getEntries({
+      content_type: 'jojoCharacters',
+    });
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    JojoCharacters.value = response.items.map((item: any) => ({
+      name: item.fields.jojoName,
+      image: item.fields.jojoImage.fields.file.url,
+    }));
+  } catch (error) {
+    console.error('Error fetching manga data:', error);
+  }
+};
+
+onMounted(async () => {
+  await fetchJojoCharacters();
+});
 </script>
 
 <template>
