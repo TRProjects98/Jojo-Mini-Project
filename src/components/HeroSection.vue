@@ -24,7 +24,7 @@ function ViconHandler(): void {
       </div>
     </div>
     <video ref="VidElement" autoplay loop muted>
-      <source src="../../public/hsVideoIntro.mp4" type="video/mp4" />
+      <source src="/hsVideoIntro.mp4" type="video/mp4" />
     </video>
     <button class="VideoVolume" type="button" @click="ViconHandler">
       <img

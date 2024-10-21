@@ -1,0 +1,116 @@
+<script setup lang="ts">
+interface Jojo {
+  name: string;
+  image: string;
+}
+
+const JojoCharacters: Array<Jojo> = [
+  {
+    name: 'Jonathan Joestar',
+    image: '/Jonathan_Joestar.png',
+  },
+];
+</script>
+
+<template>
+  <section id="MeetJJSection">
+    <h1>Meet the Jojo's</h1>
+    <div class="CardContainer">
+      <div
+        v-for="(element, index) in JojoCharacters.slice().reverse()"
+        :key="index"
+        class="Card"
+        :id="`JojoDiv${index}`"
+      >
+        <h2>{{ element.name }}</h2>
+        <img :src="element.image" :alt="`${element.name}_image`" />
+      </div>
+    </div>
+  </section>
+</template>
+<style scoped>
+#MeetJJSection {
+  min-height: 100vh;
+  background-color: black;
+  padding: 80px;
+}
+
+h1 {
+  letter-spacing: 2px;
+  margin-bottom: 150px;
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 30px;
+  margin: 0;
+  z-index: 2;
+  background-color: white;
+  color: black;
+  width: 100%;
+  padding: 10px;
+}
+
+.CardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-around;
+  perspective: 500px;
+  transform-style: preserve-3d;
+}
+
+.Card {
+  text-align: center;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  position: relative;
+  bottom: 0;
+  width: 300px;
+  height: 290px;
+  border: 5px solid white;
+  border-radius: 10px;
+  background-image: linear-gradient(
+    180deg,
+    rgb(37, 37, 37),
+    rgb(37, 37, 37),
+    rgb(37, 37, 37)
+  );
+  transition: 0.5s ease;
+}
+
+.Card::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(
+    180deg,
+    rgb(163, 70, 240),
+    rgb(124, 23, 206),
+    rgb(80, 5, 141)
+  );
+  transition: opacity 0.5s linear;
+  opacity: 0;
+}
+
+.Card > img {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.Card:hover {
+  bottom: 20px;
+}
+
+.Card:hover::before {
+  opacity: 1;
+}
+</style>
