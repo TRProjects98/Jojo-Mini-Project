@@ -3,7 +3,7 @@ name: Lint and Prettier configurations
 on:
   push:
     branches:
-      - Eslint-and-Prettier-Config-Branch
+      - Dev
 
 jobs:
   run-linters:
