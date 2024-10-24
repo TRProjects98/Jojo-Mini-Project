@@ -123,12 +123,12 @@ p {
   margin-top: 5px;
 }
 
-h1 {
-  margin-bottom: 0;
-  letter-spacing: 2px;
+.MDtitle:hover {
+  margin-bottom: 10px;
 }
 
 .MDtitle {
+  letter-spacing: 2px;
   font-size: 50px;
   margin-bottom: 150px;
 }
