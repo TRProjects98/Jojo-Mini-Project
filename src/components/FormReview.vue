@@ -15,30 +15,41 @@ function formSubmition(e: Event): void {
   e.preventDefault();
 
   if (Form.value) {
-    let FormNameInput = Form.value[0] as HTMLInputElement;
-    let FormEmailInput = Form.value[1] as HTMLInputElement;
-    let FormMessageInput = Form.value[2] as HTMLInputElement;
+    const FormNameInput = Form.value.querySelector(
+      'input[name="name"]'
+    ) as HTMLInputElement;
+    const FormEmailInput = Form.value.querySelector(
+      'input[name="email"]'
+    ) as HTMLInputElement;
+    const FormMessageInput = Form.value.querySelector(
+      'textarea[name="text"]'
+    ) as HTMLTextAreaElement;
 
-    if (
-      FormNameInput.value != '' &&
-      FormEmailInput.value != '' &&
-      FormMessageInput.value != ''
-    ) {
+    // Check if inputs are defined
+    if (FormNameInput && FormEmailInput && FormMessageInput) {
       if (
-        FormNameInput.validity.valid &&
-        FormEmailInput.validity.valid &&
-        FormMessageInput.validity.valid
+        FormNameInput.value.trim() !== '' &&
+        FormEmailInput.value.trim() !== '' &&
+        FormMessageInput.value.trim() !== ''
       ) {
-        FormValidation = true;
-        Form.value.reset();
-        FmessageIcon = 'Warning';
-        Fmessage.value =
-          'This form was created for testing purposes. Your message wasnt sent.';
+        if (
+          FormNameInput.validity.valid &&
+          FormEmailInput.validity.valid &&
+          FormMessageInput.validity.valid
+        ) {
+          FormValidation = true;
+          Form.value.reset();
+          FmessageIcon = 'Warning';
+          Fmessage.value =
+            'This form was created for testing purposes. Your message wasnt sent.';
+        } else {
+          Fmessage.value = 'Your inputs are not valid';
+        }
       } else {
-        Fmessage.value = 'Your inputs are not valid';
+        Fmessage.value = 'You cant leave any inputs empty';
       }
     } else {
-      Fmessage.value = 'You cant leave any inputs empty';
+      Fmessage.value = 'One or more inputs are not defined';
     }
   }
 

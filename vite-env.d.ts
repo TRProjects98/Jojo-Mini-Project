@@ -1,4 +1,5 @@
 /// <reference types="vite/client" />
+import '@testing-library/jest-dom';
 
 interface ImportMetaEnv {
   readonly VITE_CONTENTFUL_SPACE_ID: string;

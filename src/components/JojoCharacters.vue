@@ -32,7 +32,7 @@ onMounted(async () => {
 
 <template>
   <section id="MeetJJSection">
-    <h1>Meet the Jojo's</h1>
+    <h1 class="JojoApresent">Meet the Jojo's</h1>
     <div class="CardContainer">
       <div
         v-for="(element, index) in JojoCharacters.slice().reverse()"
@@ -40,7 +40,7 @@ onMounted(async () => {
         class="Card"
         :id="`JojoDiv${index}`"
       >
-        <h2>{{ element.name }}</h2>
+        <h2 class="JojoName">{{ element.name }}</h2>
         <img :src="element.image" :alt="`${element.name}_image`" />
       </div>
     </div>
@@ -53,13 +53,13 @@ onMounted(async () => {
   padding: 80px;
 }
 
-h1 {
+.JojoApresent {
   letter-spacing: 2px;
   margin-bottom: 150px;
   font-size: 50px;
 }
 
-h2 {
+.JojoName {
   font-size: 30px;
   margin: 0;
   z-index: 2;
@@ -84,7 +84,7 @@ h2 {
   align-items: end;
   justify-content: center;
   position: relative;
-  bottom: 0;
+  bottom: 0px;
   width: 300px;
   height: 290px;
   border: 5px solid white;
@@ -103,7 +103,7 @@ h2 {
   content: '';
   top: 0;
   right: 0;
-  bottom: 0;
+  bottom: 0px;
   left: 0;
   background-image: linear-gradient(
     180deg,

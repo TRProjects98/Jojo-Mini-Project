@@ -32,7 +32,7 @@ onMounted(async () => {
 
   // eslint-disable-next-line no-undef
   const allMangaDivs: NodeListOf<Element> =
-    document.querySelectorAll('#project_div');
+    document.querySelectorAll('.manga_div');
 
   window.addEventListener('mousemove', (e) => {
     allMangaDivs.forEach((element, index) => {
@@ -91,7 +91,7 @@ onMounted(async () => {
       <div
         v-for="(element, index) in All_Mangas.slice().reverse()"
         :key="index"
-        id="project_div"
+        class="manga_div"
       >
         <h1>{{ element.name }}</h1>
         <p>{{ element.dates }}</p>
@@ -133,7 +133,7 @@ h1 {
   margin-bottom: 150px;
 }
 
-#project_div {
+.manga_div {
   position: relative;
   border-bottom: 1px solid white;
   padding: 12px 0 12px 5px;
@@ -143,7 +143,7 @@ h1 {
     background-color 0.5s;
 }
 
-#project_div > img {
+.manga_div > img {
   width: 200px;
   height: auto;
   border: 2px solid white;
@@ -153,7 +153,7 @@ h1 {
   z-index: 2;
 }
 
-#project_div:hover {
+.manga_div:hover {
   background-color: white;
   color: #881193;
 }
@@ -165,7 +165,7 @@ h1 {
 }
 
 @media only screen and (min-width: 825px) {
-  #project_div:hover img {
+  .manga_div:hover img {
     display: inline-block;
   }
 }
