@@ -123,10 +123,6 @@ p {
   margin-top: 5px;
 }
 
-.MDtitle:hover {
-  margin-bottom: 10px;
-}
-
 .MDtitle {
   letter-spacing: 2px;
   font-size: 50px;
