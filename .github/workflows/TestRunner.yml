@@ -3,7 +3,7 @@ name: Testing App
 on:
   push:
     branches:
-      - Testing-Branch
+      - Dev
 
 jobs:
   run-linters:
