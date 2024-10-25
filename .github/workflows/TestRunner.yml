@@ -1,0 +1,21 @@
+name: Testing App
+
+on:
+  push:
+    branches:
+      - Dev
+
+jobs:
+  run-linters:
+    name: Run tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm run test

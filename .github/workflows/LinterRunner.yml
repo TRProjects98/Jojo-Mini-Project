@@ -1,0 +1,24 @@
+name: Lint and Prettier configurations
+
+on:
+  push:
+    branches:
+      - Dev
+
+jobs:
+  run-linters:
+    name: Run linters
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run prettier
+        run: npm run prettier
+
+      - name: Run linters
+        run: npm run lint
