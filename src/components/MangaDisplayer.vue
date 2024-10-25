@@ -123,15 +123,17 @@ p {
   margin-top: 5px;
 }
 
-.MDtitle:hover {
-  margin-bottom: 10px;
-}
-
 .MDtitle {
   letter-spacing: 2px;
   font-size: 50px;
   margin-bottom: 150px;
+  /*color: rgb(255, 255, 255);*/
 }
+
+/*.MDtitle:hover {
+  margin-bottom: 10px;
+  color: rgb(0, 0, 255);
+}*/
 
 .manga_div {
   position: relative;

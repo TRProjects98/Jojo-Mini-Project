@@ -42,4 +42,14 @@ describe(MangaDisplayer, () => {
       'https://example.com/Phantom_Blood.jpg'
     );
   });
+
+  /*it('render other style', async () => {
+    const container = mount(MangaDisplayer);
+
+    const heading = container.find('.MDtitle');
+
+    const headingStyles = getComputedStyle(heading.element);
+
+    expect(headingStyles.color).toBe('rgb(255, 255, 255)');
+  });*/
 });
