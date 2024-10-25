@@ -8,7 +8,7 @@
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "lib": ["esnext", "dom"],
-    "types": ["vite/client", "vitest/globals", "node", "jsdom", "vitest",]
+    "types": ["vite/client", "vitest/globals", "node", "jsdom", "vitest"]
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "vite-env.d.ts", "tests/**/*.ts"]
 }
