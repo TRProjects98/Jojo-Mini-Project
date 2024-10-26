@@ -1,7 +1,6 @@
 name: Push to main
 
 on:
-  workflow_dispatch: # Allows manual triggering
   workflow_run:
     workflows: ['Lint and Prettier configurations', 'Testing App']
     types:
