@@ -1,14 +1,11 @@
 name: Push to Main
 
 on:
-  workflow_run:
-    workflows: ['Lint and Prettier configurations', 'Testing App']
-    types:
-      - completed
+  push:
+    branches: 'Dev'
 
 jobs:
   deploy:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
 
     steps:
