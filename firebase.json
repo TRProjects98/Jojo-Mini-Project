@@ -8,6 +8,6 @@
         "destination": "/index.html"
       }
     ],
-    "predeploy": ["npm run build"]
+    "posdeploy": ["npm run build"]
   }
 }
