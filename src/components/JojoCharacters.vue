@@ -74,8 +74,6 @@ onMounted(async () => {
   flex-wrap: wrap;
   gap: 40px;
   justify-content: space-around;
-  perspective: 500px;
-  transform-style: preserve-3d;
 }
 
 .Card {
@@ -130,5 +128,11 @@ onMounted(async () => {
 
 .Card:hover::before {
   opacity: 1;
+}
+
+@media only screen and (max-width: 469px) {
+  #MeetJJSection {
+    padding: 80px 10px;
+  }
 }
 </style>

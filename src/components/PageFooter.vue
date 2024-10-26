@@ -6,13 +6,19 @@
   <footer>
     <section class="Footerlinks">
       <div>
+        <a href="#HSsection" id="footerLogoMob"
+          ><img src="/JJBA_Logo.png" alt="JJBA Logo"
+        /></a>
+
         <a href="#HSsection">
           <h3>Video</h3>
         </a>
         <a href="#MeetJJSection">
           <h3>Meet the Jojos</h3>
         </a>
-        <a href="#HSsection"><img src="/JJBA_Logo.png" alt="JJBA Logo" /></a>
+        <a href="#HSsection" id="footerLogoDesk"
+          ><img src="/JJBA_Logo.png" alt="JJBA Logo"
+        /></a>
         <a href="#MDsection">
           <h3>Jojo Parts</h3>
         </a>
@@ -37,8 +43,12 @@ footer {
   padding: 10px 80px;
 }
 
-.Footerlinks > div > a > img {
+img {
   max-height: 100px;
+}
+
+#footerLogoMob {
+  display: none;
 }
 
 .Footerlinks {
@@ -72,5 +82,24 @@ a {
 
 a:hover {
   transform: scale(1.2);
+}
+
+@media only screen and (max-width: 745px) {
+  .Footerlinks > div {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  #footerLogoDesk {
+    display: none;
+  }
+
+  #footerLogoMob {
+    display: block;
+  }
+
+  .Websitemade > p {
+    margin-top: 30px;
+  }
 }
 </style>

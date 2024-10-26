@@ -265,4 +265,10 @@ textarea:focus {
     padding-right: 3%;
   }
 }
+
+@media only screen and (max-width: 469px) {
+  #FormSection {
+    padding: 80px 10px;
+  }
+}
 </style>
