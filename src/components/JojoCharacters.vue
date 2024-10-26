@@ -32,7 +32,7 @@ onMounted(async () => {
 
 <template>
   <section id="MeetJJSection">
-    <h1 class="JojoApresent">Meet the Jojo's Deploys yeah</h1>
+    <h1 class="JojoApresent">Meet the Jojo's</h1>
     <div class="CardContainer">
       <div
         v-for="(element, index) in JojoCharacters.slice().reverse()"
