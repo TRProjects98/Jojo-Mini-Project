@@ -40,6 +40,7 @@ function ViconHandler(): void {
 #HSsection {
   position: relative;
   height: 100vh;
+  overflow: hidden;
 }
 
 .HSoverlay {
@@ -68,9 +69,10 @@ function ViconHandler(): void {
 video {
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 50%;
   min-width: 100%;
   min-height: 100%;
+  transform: translateX(-50%);
   z-index: 1;
 }
 
@@ -85,8 +87,8 @@ img {
   background-color: blueviolet;
   border-radius: 50px;
   position: fixed;
-  left: 90%;
-  top: 80%;
+  bottom: 50px;
+  right: 50px;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -108,7 +108,7 @@ onMounted(async () => {
   </section>
 </template>
 
-<style scoped>
+<style>
 #MDsection {
   background-image: url('/Dio_in_Stairs.jpg');
   background-repeat: no-repeat;
@@ -154,8 +154,14 @@ p {
   color: #881193;
 }
 
+@media only screen and (max-width: 469px) {
+  #MDsection {
+    padding: 10px;
+  }
+}
+
 @media only screen and (max-width: 725px) {
-  .MDsection {
+  #MDsection {
     background-position: center;
   }
 }
