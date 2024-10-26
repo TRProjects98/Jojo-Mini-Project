@@ -26,12 +26,7 @@ jobs:
 
       - name: Merge Dev into Main
         run: |
-          git merge Dev --allow-unrelated-histories
-
-      - name: Commit the merge
-        if: github.event_name == 'push'
-        run: |
-          git commit -m "Merge dev into main" || echo "No changes to commit"
+          git merge Dev --no-ff -m "Syncing dev with main"
 
       - name: Push changes
         env:
