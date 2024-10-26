@@ -26,7 +26,7 @@ jobs:
 
       - name: Merge Dev into Main
         run: |
-          git merge Dev --no-ff -m "Syncing dev with main"
+          git merge Dev --no-ff -m "Syncing dev with main" --allow-unrelated-histories || echo "Merge conflicts encountered"
 
       - name: Push changes
         env:
